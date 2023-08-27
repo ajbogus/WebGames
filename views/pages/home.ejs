@@ -3,16 +3,26 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        function goToNewPage(elm)
+        {
+            console.log("Getting Here");
+            var url = elm.value;
+            if(url != 'none') {
+                window.location.href = url;
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
         <%- include('../partials/header'); %>
     </header>
-    <select id="game-selector">
-        <option disabled selected>Let's ball</optoin>
-        <option> Runner</option>
-        <option> Pong</option>
-        <option> Baller</option>
+    <select id="game-selector" onchange="goToNewPage(this)">
+        <option disabled selected>Let's ball</option>
+        <option value="Runner.html"> Runner</option>
+        <option value="home.ejs"> Pong</option>
+        <option value="home.ejs"> Baller</option>
     </select>
 </body>
 </html>
